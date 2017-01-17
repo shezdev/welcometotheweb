@@ -20,10 +20,14 @@ end
 # Most web applications don't return basic strings: they return advanced HTML documents,
 # along with CSS (for styling), JavaScripts (for interaction effects), and other assets
 # (like images, videos, and audio). Let's now return some HTML!
-#4th route defined
+#4th route defined - run with shotgun app.rb -p 4567
 
-get '/cat' do
-  " <div style='border: medium dashed red'>
+get '/cat' do # - accessed via 'http://localhost:4567/cat'
+  " <div style='border: 4px dashed red'>
       <img src='http://bit.ly/1eze8aE'>
     </div>  "
 end
+
+# Next up, we'll see if we can modularize some of our code into a view. Views are used to
+# separate Ruby and HTML code. app.rb wull be for routing (or controlling) concerns and
+# we will use another file for our presentation (or view) concerns.
