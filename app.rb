@@ -33,5 +33,6 @@ end
 # we will use another file for our presentation (or view) concerns.
 
 get '/cat' do # - accessed via 'http://localhost:4567/cat'
-  erb(:index)
+  @random_name = ["Amigo", "Oscar", "Viking"].sample
+  erb(:index) #This has to be in the morning
 end

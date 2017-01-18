@@ -7,7 +7,7 @@
 
 ## To address **separation of concerns**
 * Separate our Ruby and HTML code by modularising our code into a **View**
-* app.rb will be for routing (or controlling) concerns and we will use views/index.erb for our presentation (or view) concerns.
+* app.rb will be for routing and we will use views/index.erb for our presentation (or view) concerns.
 
 # app.rb
 ```
