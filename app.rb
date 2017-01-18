@@ -32,7 +32,30 @@ end
 # separate Ruby and HTML code. app.rb wull be for routing (or controlling) concerns and
 # we will use another file for our presentation (or view) concerns.
 
-get '/cat' do # - accessed via 'http://localhost:4567/cat'
+# get '/cat' do # - accessed via 'http://localhost:4567/cat'
+#   @random_name = ["Amigo", "Oscar", "Viking"].sample
+#   erb(:index) #This has to be in the morning
+# end
+#-------------------------------------------
+get '/random-cat' do # - accessed via 'http://localhost:4567/cat'
   @random_name = ["Amigo", "Oscar", "Viking"].sample
-  erb(:index) #This has to be in the morning
+  erb(:index) #This has to be last
 end
+#-------------------------------------------
+# get '/named-cat' do # - accessed via 'http://localhost:4567/cat'
+#   @random_name = params[:name]
+#   p params
+#   # params = {"name"=>"James"} - params is a hash
+#   erb(:index) #This has to be last
+# end
+#-------------------------------------------
+get '/cat-form' do
+  erb :cat_form
+end
+
+post '/second-named-cat' do
+    p params
+  @random_name = params[:name]
+  erb :index
+end
+#-------------------------------------------
